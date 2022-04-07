@@ -12,7 +12,6 @@ function updateTime(){
         t_str += "AM";
     }
     document.getElementById('time').innerHTML = t_str;
-    console.log(t_str)
 }
 
 setInterval(updateTime, 1000);
