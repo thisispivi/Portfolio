@@ -11,15 +11,40 @@
   --dark-medium: #5e548e;
   --medium: #9f86c0;
   --light-medium: #be95c4;
+  --lighter-medium: #cda2d4;
   --light: #e0b1cb;
-  --title-font-size: 6rem;
+  --bold: #e279b3;
+  --title-font-size: 3rem;
   --left-bar-width: 45vw;
+  --left-bar-padding: 7rem 2rem 7rem 8rem;
+  --right-bar-padding: 10rem 8rem 10rem 2rem;
+  --date-font-size: 1rem;
+  --text-font-size: 1rem;
+  --circle-size: 1rem;
+  --line-width: 0.2rem;
 }
 
 .bg-dark {
-  background-color: var(--dark);
+  background: rgb(26, 19, 48);
+  background: linear-gradient(
+    60deg,
+    rgba(26, 19, 48, 1) 0%,
+    rgba(39, 34, 62, 1) 66%,
+    rgb(47, 42, 70) 100%
+  );
+
   .title {
     color: var(--light);
+  }
+  .circle,
+  .line {
+    background-color: var(--medium);
+  }
+  .date {
+    color: white;
+  }
+  .text {
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -61,24 +86,160 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   scroll-snap-align: start;
 
   .left-bar {
     width: var(--left-bar-width);
-    padding: 10rem 4rem 10rem 8rem;
+    padding: var(--left-bar-padding);
     display: flex;
+    flex-direction: column;
     height: 100%;
 
     .title {
       font-size: var(--title-font-size);
       font-weight: 900;
-      margin-bottom: 2rem;
+      margin-bottom: auto;
+      display: flex;
+
+      .university-hat-icon {
+        width: var(--title-font-size);
+        height: var(--title-font-size);
+        margin-right: 0.5rem;
+      }
     }
   }
 
   .right-bar {
     width: calc(100vw - var(--left-bar-width));
     margin-left: auto;
+    display: flex;
+    padding: var(--right-bar-padding);
+
+    svg {
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.education {
+  display: flex;
+  overflow: hidden;
+
+  .right-bar {
+    padding: 5rem 0rem 5rem 2rem;
+  }
+}
+
+.events {
+  margin-top: auto;
+
+  .event {
+    margin-bottom: 0.6rem;
+    opacity: 0;
+
+    .row {
+      display: flex;
+      margin-bottom: 0.6rem;
+    }
+
+    .circle {
+      width: var(--circle-size);
+      height: var(--circle-size);
+      border-radius: 50%;
+    }
+
+    .date {
+      height: var(--circle-size);
+      font-size: var(--date-font-size);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+    }
+
+    .text {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: var(--text-font-size);
+      padding: 0.4rem 0 1.4rem 0;
+
+      & > * {
+        margin-bottom: 0.4rem;
+      }
+
+      .title {
+        font-size: 1.1rem;
+        color: var(--bold);
+      }
+
+      b {
+        font-weight: 700;
+        color: var(--light-medium);
+      }
+
+      .thesis {
+        display: flex;
+        .book-icon,
+        .university-icon {
+          width: 1rem;
+          height: 1rem;
+          margin: auto 0.4rem auto 0;
+        }
+      }
+
+      a {
+        color: var(--medium);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.05s ease-in-out, stroke 0.2s ease-in-out,
+          fill 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--lighter-medium);
+          .external-link-icon {
+            stroke: var(--lighter-medium);
+            fill: var(--lighter-medium);
+          }
+        }
+
+        .external-link-icon {
+          stroke: var(--medium);
+          fill: var(--medium);
+          height: 1.2rem;
+          width: 1rem;
+          margin-bottom: -0.25rem;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+    .line-container {
+      width: var(--circle-size);
+      .line {
+        width: var(--line-width);
+        height: 100%;
+        margin: 0 calc((var(--circle-size) - var(--line-width)) / 2);
+      }
+    }
+  }
+
+  @keyframes fadeInFromAbove {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .event-item {
+    animation: fadeInFromAbove 0.7s ease-in-out forwards;
   }
 }

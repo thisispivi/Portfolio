@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Section from "./components/Section";
 import { useTranslation } from "react-i18next";
+import Education from "./pages/Education";
 
 export default function HomePage() {
   const { t } = useTranslation(["home"]);
@@ -8,11 +9,11 @@ export default function HomePage() {
 
   return (
     <div className="page">
+      <Section backgroundColor="pink">
+        <h1>Page3</h1>
+      </Section>
       <Section className="bg-dark">
-        <div className="left-bar">
-          <div className="title">{t("education.title")}</div>
-        </div>
-        <div className="right-bar"></div>
+        <Education t={t} />
       </Section>
       <Section backgroundColor="blue">
         <h1>Page 2</h1>
