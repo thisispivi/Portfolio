@@ -217,6 +217,11 @@
     --text-margin-bottom: 0.4rem;
     --row-margin-bottom: 0.7rem;
     --link-icon-margin-bottom: -0.1rem;
+    .left-bar {
+      .events {
+        margin-bottom: 5rem;
+      }
+    }
   }
 }
 
@@ -240,5 +245,11 @@
     --text-margin-bottom: 0.2rem;
     --row-margin-bottom: 0.2rem;
     --link-icon-margin-bottom: -0.1rem;
+
+    .left-bar {
+      .events {
+        margin-bottom: 5rem;
+      }
+    }
   }
 }
