@@ -49,57 +49,8 @@
   }
 }
 
-/* For tablets (portrait and landscape) */
-@media only screen and (max-width: 950px) {
-  /* Your CSS styles for tablets */
-  .education-page {
-    --left-bar-width: 90vw;
-    --left-bar-height: 90vh;
-    --left-bar-margin: auto auto auto auto;
-    --title-margin-bottom: 2rem;
-    --right-bar-display: none;
-    --right-bar-width: 50vw;
-    --image-size: 27rem;
-    --image-margin: auto auto auto auto;
-    --title-font-size: 2.6rem;
-    --date-font-size: 1rem;
-    --text-font-size: 0.9rem;
-    --text-title-font-size: 1.1rem;
-    --link-font-size: 1rem;
-    --circle-size: 1rem;
-    --line-width: 0.14rem;
-    --text-margin-bottom: 0.3rem;
-    --row-margin-bottom: 0.4rem;
-    --link-icon-margin-bottom: -0.1rem;
-  }
-}
-
-@media only screen and (min-width: 950px) and (max-width: 1280px) {
-  /* Your CSS styles for small desktops and laptops */
-  .education-page {
-    --left-bar-width: 28rem;
-    --left-bar-height: 32rem;
-    --left-bar-margin: auto 0rem auto auto;
-    --title-margin-bottom: auto;
-    --right-bar-display: flex;
-    --right-bar-width: 50vw;
-    --image-size: 27rem;
-    --image-margin: auto auto auto auto;
-    --title-font-size: 2.2rem;
-    --date-font-size: 0.7rem;
-    --text-font-size: 0.7rem;
-    --text-title-font-size: 0.8rem;
-    --link-font-size: 0.7rem;
-    --circle-size: 0.7rem;
-    --line-width: 0.14rem;
-    --text-margin-bottom: 0.2rem;
-    --row-margin-bottom: 0.3rem;
-    --link-icon-margin-bottom: -0.1rem;
-  }
-}
-
 /* For small desktops and laptops */
-@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+@media only screen and (min-width: 1280px) and (max-width: 1440px) and (orientation: landscape) {
   /* Your CSS styles for small desktops and laptops */
   .education-page {
     --left-bar-width: 32rem;
@@ -124,7 +75,7 @@
 }
 
 /* For medium desktops and laptops */
-@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+@media only screen and (min-width: 1440px) and (max-width: 1920px) and (orientation: landscape) {
   /* Your CSS styles for medium desktops and laptops */
   .education-page {
     --left-bar-width: 35rem;
@@ -149,7 +100,7 @@
 }
 
 /* For large desktops and high-resolution monitors */
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1920px) and (orientation: landscape) {
   .education-page {
     --left-bar-width: 35rem;
     --left-bar-height: 45rem;
@@ -169,5 +120,78 @@
     --text-margin-bottom: 0.5rem;
     --row-margin-bottom: 0.6rem;
     --link-icon-margin-bottom: -0.2rem;
+  }
+}
+
+/* For tablets (portrait and landscape) */
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+  /* Your CSS styles for tablets */
+  .education-page {
+    --left-bar-width: 85vw;
+    --left-bar-height: auto;
+    --left-bar-margin: auto auto auto auto;
+    --title-margin-bottom: 4rem;
+    --right-bar-display: none;
+    --right-bar-width: 50vw;
+    --image-size: 27rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.6rem;
+    --date-font-size: 1rem;
+    --text-font-size: 1rem;
+    --text-title-font-size: 1.1rem;
+    --link-font-size: 1rem;
+    --circle-size: 1rem;
+    --line-width: 0.14rem;
+    --text-margin-bottom: 0.4rem;
+    --row-margin-bottom: 0.7rem;
+    --link-icon-margin-bottom: -0.1rem;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1280px) and (orientation: landscape) {
+  /* Your CSS styles for small desktops and laptops */
+  .education-page {
+    --left-bar-width: 28rem;
+    --left-bar-height: 32rem;
+    --left-bar-margin: auto 0rem auto auto;
+    --title-margin-bottom: auto;
+    --right-bar-display: flex;
+    --right-bar-width: 50vw;
+    --image-size: 27rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.2rem;
+    --date-font-size: 0.7rem;
+    --text-font-size: 0.7rem;
+    --text-title-font-size: 0.8rem;
+    --link-font-size: 0.7rem;
+    --circle-size: 0.7rem;
+    --line-width: 0.14rem;
+    --text-margin-bottom: 0.2rem;
+    --row-margin-bottom: 0.3rem;
+    --link-icon-margin-bottom: -0.1rem;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  /* Your CSS styles for vertical (portrait) mode */
+  .education-page {
+    --left-bar-width: 85vw;
+    --left-bar-height: auto;
+    --left-bar-margin: auto auto auto auto;
+    --title-margin-bottom: 4rem;
+    --right-bar-display: none;
+    --right-bar-width: 50vw;
+    --image-size: 27rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.6rem;
+    --date-font-size: 1rem;
+    --text-font-size: 1rem;
+    --text-title-font-size: 1.1rem;
+    --link-font-size: 1rem;
+    --circle-size: 1rem;
+    --line-width: 0.14rem;
+    --text-margin-bottom: 0.4rem;
+    --row-margin-bottom: 0.7rem;
+    --link-icon-margin-bottom: -0.1rem;
   }
 }
