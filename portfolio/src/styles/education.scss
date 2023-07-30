@@ -1,0 +1,173 @@
+.education-page {
+  // Default
+
+  --left-bar-width: 35rem;
+  --left-bar-height: 40rem;
+  --left-bar-margin: auto 2rem auto auto;
+  --title-margin-bottom: auto;
+  --right-bar-display: flex;
+  --right-bar-width: 55vw;
+  --image-size: 50rem;
+  --image-margin: auto auto auto auto;
+
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+
+  .left-bar {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: var(--left-bar-width);
+    height: var(--left-bar-height);
+    margin: var(--left-bar-margin);
+
+    .title {
+      font-size: var(--title-font-size);
+      font-weight: 900;
+      display: flex;
+      margin-bottom: var(--title-margin-bottom);
+
+      .university-hat-icon {
+        width: var(--title-font-size);
+        height: var(--title-font-size);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .right-bar {
+    display: var(--right-bar-display);
+    padding: 0;
+    height: 100%;
+    width: var(--right-bar-width);
+    svg {
+      margin: var(--image-margin);
+      width: var(--image-size);
+      height: var(--image-size);
+    }
+  }
+}
+
+/* For tablets (portrait and landscape) */
+@media only screen and (max-width: 950px) {
+  /* Your CSS styles for tablets */
+  .education-page {
+    --left-bar-width: 90vw;
+    --left-bar-height: 90vh;
+    --left-bar-margin: auto auto auto auto;
+    --title-margin-bottom: 2rem;
+    --right-bar-display: none;
+    --right-bar-width: 50vw;
+    --image-size: 27rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.6rem;
+    --date-font-size: 1rem;
+    --text-font-size: 0.9rem;
+    --text-title-font-size: 1.1rem;
+    --link-font-size: 1rem;
+    --circle-size: 1rem;
+    --line-width: 0.14rem;
+    --text-margin-bottom: 0.3rem;
+    --row-margin-bottom: 0.4rem;
+    --link-icon-margin-bottom: -0.1rem;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1280px) {
+  /* Your CSS styles for small desktops and laptops */
+  .education-page {
+    --left-bar-width: 28rem;
+    --left-bar-height: 32rem;
+    --left-bar-margin: auto 0rem auto auto;
+    --title-margin-bottom: auto;
+    --right-bar-display: flex;
+    --right-bar-width: 50vw;
+    --image-size: 27rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.2rem;
+    --date-font-size: 0.7rem;
+    --text-font-size: 0.7rem;
+    --text-title-font-size: 0.8rem;
+    --link-font-size: 0.7rem;
+    --circle-size: 0.7rem;
+    --line-width: 0.14rem;
+    --text-margin-bottom: 0.2rem;
+    --row-margin-bottom: 0.3rem;
+    --link-icon-margin-bottom: -0.1rem;
+  }
+}
+
+/* For small desktops and laptops */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+  /* Your CSS styles for small desktops and laptops */
+  .education-page {
+    --left-bar-width: 32rem;
+    --left-bar-height: 35rem;
+    --left-bar-margin: auto 0rem auto auto;
+    --title-margin-bottom: auto;
+    --right-bar-display: flex;
+    --right-bar-width: 53vw;
+    --image-size: 38rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.6rem;
+    --date-font-size: 0.8rem;
+    --text-font-size: 0.8rem;
+    --text-title-font-size: 0.9rem;
+    --link-font-size: 0.8rem;
+    --circle-size: 0.8rem;
+    --line-width: 0.16rem;
+    --text-margin-bottom: 0.3rem;
+    --row-margin-bottom: 0.4rem;
+    --link-icon-margin-bottom: -0.15rem;
+  }
+}
+
+/* For medium desktops and laptops */
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  /* Your CSS styles for medium desktops and laptops */
+  .education-page {
+    --left-bar-width: 35rem;
+    --left-bar-height: 40rem;
+    --left-bar-margin: auto 0rem auto auto;
+    --title-margin-bottom: auto;
+    --right-bar-display: flex;
+    --right-bar-width: 55vw;
+    --image-size: 44rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 2.8rem;
+    --date-font-size: 0.9rem;
+    --text-font-size: 0.9rem;
+    --text-title-font-size: 1rem;
+    --link-font-size: 0.9rem;
+    --circle-size: 0.95rem;
+    --line-width: 0.18rem;
+    --text-margin-bottom: 0.5rem;
+    --row-margin-bottom: 0.5rem;
+    --link-icon-margin-bottom: -0.15rem;
+  }
+}
+
+/* For large desktops and high-resolution monitors */
+@media only screen and (min-width: 1920px) {
+  .education-page {
+    --left-bar-width: 35rem;
+    --left-bar-height: 45rem;
+    --left-bar-margin: auto 0rem auto auto;
+    --title-margin-bottom: auto;
+    --right-bar-display: flex;
+    --right-bar-width: 60vw;
+    --image-size: 55rem;
+    --image-margin: auto auto auto auto;
+    --title-font-size: 3rem;
+    --date-font-size: 1rem;
+    --text-font-size: 1rem;
+    --text-title-font-size: 1.1rem;
+    --link-font-size: 1rem;
+    --circle-size: 1rem;
+    --line-width: 0.2rem;
+    --text-margin-bottom: 0.5rem;
+    --row-margin-bottom: 0.6rem;
+    --link-icon-margin-bottom: -0.2rem;
+  }
+}

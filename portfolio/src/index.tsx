@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./styles/animations.scss";
+import "./styles/colors.scss";
+import "./styles/education.scss";
+import "./styles/events.scss";
+import "./styles/language.scss";
 import "./styles/main.scss";
+import "./styles/menu.scss";
 import reportWebVitals from "./reportWebVitals";
 import HomePage from "./HomePage";
 import "./i18n/i18n";

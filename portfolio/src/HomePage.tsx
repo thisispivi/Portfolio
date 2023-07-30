@@ -1,29 +1,117 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Section from "./components/Section";
 import { useTranslation } from "react-i18next";
 import Education from "./pages/Education";
+import { LanguageDropdown } from "./components/Language";
 
 export default function HomePage() {
-  const { t } = useTranslation(["home"]);
+  const { t, i18n } = useTranslation(["home"]);
+  const currentLanguage = i18n.language;
+  const pageRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
 
+  console.log("page", page);
+
+  useEffect(() => {
+    const container = pageRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const { clientHeight, scrollTop } = container;
+      const currentPageNumber = Math.round(scrollTop / clientHeight);
+      setPage(currentPageNumber);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToPage = (pageNumber: number) => {
+    const container = pageRef.current;
+    if (!container) return;
+
+    const pageHeight = container.clientHeight;
+    container.scrollTo({
+      top: pageHeight * pageNumber,
+      behavior: "smooth",
+    });
+    setPage(pageNumber);
+  };
+
+  const pages = [
+    {
+      label: "home",
+      title: t("home.title"),
+      content: <>PAGE 0</>,
+      color: "bg-medium",
+    },
+    {
+      label: "education",
+      title: t("education.title"),
+      content: <Education t={t} />,
+      color: "bg-dark",
+    },
+    {
+      label: "home",
+      title: t("home.title"),
+      content: <>PAGE 1</>,
+      color: "bg-medium",
+    },
+    {
+      label: "home",
+      title: t("home.title"),
+      content: <>PAGE 2</>,
+      color: "bg-medium",
+    },
+  ];
+
   return (
-    <div className="page">
-      <Section backgroundColor="pink">
-        <h1>Page3</h1>
-      </Section>
-      <Section className="bg-dark">
-        <Education t={t} />
-      </Section>
-      <Section backgroundColor="blue">
-        <h1>Page 2</h1>
-      </Section>
-      <Section backgroundColor="pink">
-        <h1>Page3</h1>
-      </Section>
-      <Section>
-        <h1>Home </h1>
-      </Section>
+    <div className={`page ${pages[page].label}`} ref={pageRef}>
+      <LanguageDropdown
+        onClick={(lang) => {
+          i18n.changeLanguage(lang);
+        }}
+        currentLanguage={currentLanguage}
+      />
+      <Menu pages={pages} scrollToPage={scrollToPage} />
+      {pages.map((page, index) => (
+        <Section key={index} className={page.color}>
+          {page.content}
+        </Section>
+      ))}
+    </div>
+  );
+}
+
+interface MenuProps {
+  pages: {
+    label: string;
+    title: string;
+    content: React.ReactNode;
+    color: string;
+  }[];
+  scrollToPage: (pageNumber: number) => void;
+}
+
+function Menu({ pages, scrollToPage }: MenuProps) {
+  return (
+    <div className="menu">
+      <div className="menu-container">
+        {pages.map((page, index) => (
+          <div
+            key={index}
+            className="menu-item"
+            onClick={() => {
+              scrollToPage(index);
+            }}
+          >
+            {page.title}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

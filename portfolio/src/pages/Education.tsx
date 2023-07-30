@@ -14,17 +14,12 @@ export interface EducationProps {
 export default function Education({ t }: EducationProps) {
   const [isVisible, setIsVisible] = useState(false);
   const educationRef = useRef(null);
-  console.log(isVisible);
-
-  const getDelay = (index: number) => {
-    return isVisible ? `${index * 0.6}s` : undefined;
-  };
 
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.9, // 0.5 means at least 50% of the component is visible
+      threshold: 0.9,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -36,13 +31,15 @@ export default function Education({ t }: EducationProps) {
       });
     }, options);
 
-    if (educationRef.current) {
-      observer.observe(educationRef.current);
+    const currentEducationRef = educationRef.current;
+
+    if (currentEducationRef) {
+      observer.observe(currentEducationRef);
     }
 
     return () => {
-      if (educationRef.current) {
-        observer.unobserve(educationRef.current);
+      if (currentEducationRef) {
+        observer.unobserve(currentEducationRef);
       }
     };
   }, []);
@@ -135,10 +132,10 @@ export default function Education({ t }: EducationProps) {
   return (
     <div
       ref={educationRef}
-      className="education"
+      className="education-page"
       style={{
         backgroundImage: `url(${
-          require("../icons/educational_wallpaper.svg").default
+          require("../icons/EducationalWallpaper.svg").default
         }) `,
       }}
     >

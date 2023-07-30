@@ -1,0 +1,112 @@
+.events {
+  .event {
+    margin-bottom: var(--row-margin-bottom);
+    opacity: 0;
+
+    .row {
+      display: flex;
+      margin-bottom: var(--row-margin-bottom);
+    }
+
+    .circle {
+      width: var(--circle-size);
+      height: var(--circle-size);
+      border-radius: 50%;
+    }
+
+    .date {
+      height: var(--circle-size);
+      font-size: var(--date-font-size);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+    }
+
+    .text {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.4rem 0 1.4rem 0;
+
+      & > * {
+        margin-bottom: var(--text-margin-bottom);
+        font-size: var(--text-font-size);
+      }
+
+      .title {
+        font-size: var(--text-title-font-size);
+        color: var(--bold);
+      }
+
+      b {
+        font-weight: 700;
+        font-size: var(--text-font-size);
+        color: var(--light-medium);
+      }
+
+      .thesis {
+        display: flex;
+
+        span {
+          font-size: var(--link-font-size);
+        }
+
+        .book-icon,
+        .university-icon {
+          width: var(--link-font-size);
+          height: var(--link-font-size);
+          margin: auto 0.4rem auto 0;
+        }
+      }
+
+      a {
+        color: var(--medium);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.05s ease-in-out, stroke 0.2s ease-in-out,
+          fill 0.2s ease-in-out;
+        font-size: var(--link-font-size);
+        margin-top: 0.005rem;
+
+        & > span {
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-top: 0.005rem;
+        }
+
+        &:hover {
+          color: var(--lighter-medium);
+          .external-link-icon {
+            stroke: var(--lighter-medium);
+            fill: var(--lighter-medium);
+          }
+        }
+
+        .external-link-icon {
+          stroke: var(--medium);
+          fill: var(--medium);
+          height: var(--link-font-size);
+          width: var(--link-font-size);
+          margin-bottom: var(--link-icon-margin-bottom);
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+    .line-container {
+      width: var(--circle-size);
+      .line {
+        width: var(--line-width);
+        height: 100%;
+        margin: 0 calc((var(--circle-size) - var(--line-width)) / 2);
+      }
+    }
+  }
+
+  .event-item {
+    animation: fadeInFromAbove 0.7s ease-in-out forwards;
+  }
+}

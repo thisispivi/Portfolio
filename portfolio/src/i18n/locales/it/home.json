@@ -1,4 +1,13 @@
 {
+  "home": {
+    "title": "Chi sono?",
+    "description": "Sono uno studente di <b>Informatica</b> all' <b>Università di Cagliari</b>. Sono appassionato di <b>programmazione</b> e <b>finanza</b>.",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
   "education": {
     "title": "Istruzione",
     "events": {

@@ -1,0 +1,43 @@
+.bg-dark {
+  background: rgb(26, 19, 48);
+  background: linear-gradient(
+    60deg,
+    rgba(26, 19, 48, 1) 0%,
+    rgba(39, 34, 62, 1) 66%,
+    rgb(47, 42, 70) 100%
+  );
+
+  .title {
+    color: var(--light);
+  }
+  .circle,
+  .line {
+    background-color: var(--medium);
+  }
+  .date {
+    color: white;
+  }
+  .text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.bg-dark-medium {
+  background-color: var(--dark-medium);
+}
+
+.bg-medium {
+  background-color: var(--medium);
+}
+
+.bg-light-medium {
+  background-color: var(--light-medium);
+}
+
+.bg-light {
+  background-color: var(--light);
+}
+
+.bg-white {
+  background-color: #fff;
+}
