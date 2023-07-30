@@ -16,9 +16,19 @@ export default function HomePage() {
     const container = pageRef.current;
     if (!container) return;
 
+    function customRound(scrollTop: number, clientHeight: number) {
+      const divisionResult = scrollTop / clientHeight;
+      const decimalPart = divisionResult - Math.floor(divisionResult);
+      const roundedValue =
+        decimalPart <= 0.9
+          ? Math.floor(divisionResult)
+          : Math.ceil(divisionResult);
+      return roundedValue;
+    }
+
     const handleScroll = () => {
       const { clientHeight, scrollTop } = container;
-      const currentPageNumber = Math.round(scrollTop / clientHeight);
+      const currentPageNumber = customRound(scrollTop, clientHeight);
       setPage(currentPageNumber);
     };
 

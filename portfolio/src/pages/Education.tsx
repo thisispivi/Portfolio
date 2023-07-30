@@ -51,6 +51,7 @@ export default function Education({ t }: EducationProps) {
         <>
           <div className="title">{t("education.events.high-school.title")}</div>
           <div
+            className="base-text"
             dangerouslySetInnerHTML={{
               __html: t("education.events.high-school.description"),
             }}
@@ -71,6 +72,7 @@ export default function Education({ t }: EducationProps) {
         <>
           <div className="title">{t("education.events.college.title")}</div>
           <div
+            className="base-text"
             dangerouslySetInnerHTML={{
               __html: t("education.events.college.description"),
             }}
@@ -102,6 +104,7 @@ export default function Education({ t }: EducationProps) {
         <>
           <div className="title">{t("education.events.master.title")}</div>
           <div
+            className="base-text"
             dangerouslySetInnerHTML={{
               __html: t("education.events.master.description"),
             }}
