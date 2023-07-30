@@ -7,6 +7,7 @@ import "./styles/events.scss";
 import "./styles/language.scss";
 import "./styles/main.scss";
 import "./styles/menu.scss";
+import "./styles/home.scss";
 import "tippy.js/animations/scale.css";
 import "tippy.js/animations/scale-subtle.css";
 import "tippy.js/animations/scale-extreme.css";

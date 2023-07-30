@@ -1,0 +1,12 @@
+.home-page {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  .center {
+    width: 80rem;
+    height: 50rem;
+    margin: auto;
+  }
+}

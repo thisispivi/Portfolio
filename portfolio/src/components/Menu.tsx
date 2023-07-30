@@ -14,7 +14,7 @@ interface MenuProps {
 
 function Menu({ pages, scrollToPage, currentPage }: MenuProps) {
   return (
-    <div className="menu">
+    <div className="menu page-selector">
       <div className="menu-container">
         {pages.map((page, index) => (
           <Tippy

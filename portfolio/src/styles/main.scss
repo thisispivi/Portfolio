@@ -59,3 +59,10 @@
   padding: 0.4rem;
   color: #231942;
 }
+
+@media screen and (orientation: portrait) {
+  .page-selector,
+  .language-icon {
+    display: none !important;
+  }
+}

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Education from "./pages/Education";
 import { LanguageDropdown } from "./components/Language";
 import Menu from "./components/Menu";
+import Home from "./pages/Home";
 
 export default function HomePage() {
   const { t, i18n } = useTranslation(["home"]);
@@ -56,7 +57,7 @@ export default function HomePage() {
     {
       label: "home",
       title: t("home.title"),
-      content: <>PAGE 0</>,
+      content: <Home t={t} />,
       color: "bg-medium",
     },
     {

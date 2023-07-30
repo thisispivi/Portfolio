@@ -27,11 +27,18 @@
       font-weight: 700;
       display: flex;
       margin-bottom: var(--title-margin-bottom);
+      margin-left: -0.9rem;
 
       .university-hat-icon {
         width: var(--title-font-size);
         height: var(--title-font-size);
         margin-right: 0.5rem;
+      }
+    }
+
+    .text {
+      .title {
+        margin-left: 0;
       }
     }
   }
