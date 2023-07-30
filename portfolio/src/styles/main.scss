@@ -37,13 +37,25 @@
 }
 
 .education {
+  --menu-color: var(--light);
   .language-icon {
     fill: var(--light);
   }
 }
+.tippy-box[data-theme~="syrto-education"] {
+  font-weight: 500;
+  padding: 0.4rem;
+  color: #e0b1cb;
+}
 
 .home {
+  --menu-color: var(--dark);
   .language-icon {
     fill: var(--dark);
   }
+}
+.tippy-box[data-theme~="syrto-home"] {
+  font-weight: 500;
+  padding: 0.4rem;
+  color: #231942;
 }

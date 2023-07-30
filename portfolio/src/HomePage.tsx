@@ -3,6 +3,7 @@ import Section from "./components/Section";
 import { useTranslation } from "react-i18next";
 import Education from "./pages/Education";
 import { LanguageDropdown } from "./components/Language";
+import Menu from "./components/Menu";
 
 export default function HomePage() {
   const { t, i18n } = useTranslation(["home"]);
@@ -20,7 +21,7 @@ export default function HomePage() {
       const divisionResult = scrollTop / clientHeight;
       const decimalPart = divisionResult - Math.floor(divisionResult);
       const roundedValue =
-        decimalPart <= 0.9
+        decimalPart <= 0.75
           ? Math.floor(divisionResult)
           : Math.ceil(divisionResult);
       return roundedValue;
@@ -86,42 +87,12 @@ export default function HomePage() {
         }}
         currentLanguage={currentLanguage}
       />
-      <Menu pages={pages} scrollToPage={scrollToPage} />
+      <Menu pages={pages} scrollToPage={scrollToPage} currentPage={page} />
       {pages.map((page, index) => (
         <Section key={index} className={page.color}>
           {page.content}
         </Section>
       ))}
-    </div>
-  );
-}
-
-interface MenuProps {
-  pages: {
-    label: string;
-    title: string;
-    content: React.ReactNode;
-    color: string;
-  }[];
-  scrollToPage: (pageNumber: number) => void;
-}
-
-function Menu({ pages, scrollToPage }: MenuProps) {
-  return (
-    <div className="menu">
-      <div className="menu-container">
-        {pages.map((page, index) => (
-          <div
-            key={index}
-            className="menu-item"
-            onClick={() => {
-              scrollToPage(index);
-            }}
-          >
-            {page.title}
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
